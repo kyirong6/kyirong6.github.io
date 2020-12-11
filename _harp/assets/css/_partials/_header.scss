@@ -8,7 +8,8 @@ $spacer: 10px;
     background-color: rgba($color:  #DEF3FD, $alpha: 1.0);
     text-align: center;
     align-items: center;
-    width: 100%;
+    margin: 0;
+    width:100%;
 
     &__intro {
       margin-bottom: ($spacer / 2);
@@ -16,7 +17,7 @@ $spacer: 10px;
       align-items: center;
       background-color: rgba($color:  #DEF3FD, $alpha: 1.0);
       padding-bottom: $spacer * 4;
-      width: 100%;
+      margin: 0;
     }
   
     &__title {
@@ -36,4 +37,8 @@ $spacer: 10px;
       font-family: 'Source Sans Pro', sans-serif;
       margin-top: 10px;
     }
+}
+
+body {
+    background-color: rgba($color:  #DEF3FD, $alpha: 1.0);
 }
