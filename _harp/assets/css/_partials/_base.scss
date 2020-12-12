@@ -1,3 +1,6 @@
+$yellow: rgba(245, 215, 110, .5);
+$darkblue: hsl(199, 85.3, 13.3);
+
 .container {
     max-width: 860px;
     margin: 0 auto;
@@ -19,6 +22,26 @@
     padding: 0 10px;
     z-index: 2;
   
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+    background: $yellow; 
+    transition: all linear .2s;
+  
+    &:hover {
+      background: rgba($yellow, 1.0);
+      text-decoration: none;
+    }
+  }
+
+  a.no-highlight {
+    background-color: transparent;
+  
+    &:hover {
+      color: lighten($darkblue, 20%);
+    }
   }
 
 
