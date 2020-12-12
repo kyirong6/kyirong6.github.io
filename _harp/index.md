@@ -2,4 +2,4 @@ I'm currently an undergraduate student at [SFU](https://www.sfu.ca) finishing a 
 
 My interests comprise of practical and ethical applications of machine learning and musical composition through deep learning. If i'm not on my computer, you'll most likely find me on the basketball court, soccer pitch, or playing/listening to music. 
 
-Just in case you're wondering, my (middle/preffered) name is proncouned: chŭn'dən
+Just in case you're wondering, my (middle/preffered) name is pronounced: chŭn'dən
