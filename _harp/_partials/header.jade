@@ -5,6 +5,13 @@ header.header.container
         p.header__affiliation Simon Fraser University
         p.header__contact ckyirong[at]sfu[dot]ca
 
+        ul.header__links.list-unstyled.list-inline
+            for link in public._data.about.links
+                li
+                    a(href="#{link.url}").no-highlight
+                        i.fa(class="#{link.icon}" aria-hidden="true" title="#{link.title}")      
+
+
     .header__photo
         figure.header__photo-wrapper
             img(src="assets/img/headshot.jpg" alt="Photo of me at a park")

@@ -38,6 +38,31 @@
             "description": "Instructed a class on Java and OOP concepts for ~60 students in association with Illuminate."
         }
 
-    ]
+    ],
+
+    "about": {
+        "links": [
+          {
+            "title": "CV",
+            "url": "assets/resume.pdf",
+            "icon": "fa-file-text-o"
+          },
+          {
+            "title": "GitHub",
+            "url": "http://github.com/kyirong6",
+            "icon": "fa-github-alt"
+          },
+          {
+            "title": "Twitter",
+            "url": "http://twitter.com/CKyirong",
+            "icon": "fa-twitter"
+          },
+          {
+            "title": "LinkedIn",
+            "url": "http://linkedin.com/in/choendenkyirong",
+            "icon": "fa-linkedin"
+          }
+        ]
+      }
 
 }

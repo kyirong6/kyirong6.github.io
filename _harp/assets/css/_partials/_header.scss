@@ -23,21 +23,30 @@ $photo-bp: 500px;
     }
   
     &__title {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       font-weight: bold;
       margin-bottom: ($spacer / 2);
       font-family: 'DM Serif Text', serif;
     }
   
     &__affiliation {
-      margin-bottom: ($spacer / 2);
+      margin-bottom: 0px;
       margin-top: 0px;
       font-family: 'Open Sans', sans-serif;
     }
   
     &__contact {
       font-family: 'Source Sans Pro', sans-serif;
-      margin-top: 0px
+      margin-top: ($spacer / 2);
+    }
+
+    &__links {
+      justify-content: center;
+      margin: ($spacer / 2) 0;
+  
+      @media (min-width: $photo-bp) {
+        justify-content: flex-start;
+      }
     }
 
     &__photo {
