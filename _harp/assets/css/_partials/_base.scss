@@ -60,15 +60,4 @@ section {
   padding: 0 10px;
   z-index: 2;
 
-  &::after {
-    content: '';
-    background-color: #f5c0a2;
-    height: 5px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 0;
-    width: 100%;
-    z-index: -1;
-  }
 }
