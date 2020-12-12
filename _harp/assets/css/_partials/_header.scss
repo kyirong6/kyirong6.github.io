@@ -48,25 +48,21 @@ $photo-bp: 500px;
       }
     }
 
-  &__photo-wrapper {
-    position: relative;
+    &__photo-wrapper {
+      position: relative;
 
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -20%;
-      transform: rotate(-45deg);
-      height: 150px;
-      width: 150px;
-      background-color: hsl(150, 55%, 83%);
-      z-index: -1;
+      &::before {
+        position: absolute;
+        top: 0;
+        height: 150px;
+        width: 150px;
+        z-index: -1;
+      }
+      > img {
+        width: 100%;
+        display: block;
+      }
     }
-    > img {
-      width: 100%;
-      display: block;
-    }
-  }
     
 }
 
