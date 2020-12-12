@@ -1,0 +1,10 @@
+section.timeline#timeline
+  .container
+    h2.section-title Timeline
+
+    dl
+      for timeline in public._data.timeline
+        dt.timeline__item-date
+          p #{timeline.date}
+        dd.timeline__item-description
+          p !{timeline.description}

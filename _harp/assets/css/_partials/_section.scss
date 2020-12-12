@@ -1,16 +1,30 @@
 /**
  * ABOUT
  */
+ $spacer: 10px;
+
 
  .about {
-    text-align: center;
-    align-items: center;
     font-family: 'Lora', serif;
-    margin: 0;
+    padding-bottom: $spacer * 4;
 
     h2 {
         font-family: 'DM Serif Text', serif;
     }
 
   }
+
+/**
+ * Timeline
+ */
+
+ .timeline {
+    text-align: left;
+    font-family: 'Lora', serif;
+  
+    h2 {
+        font-family: 'DM Serif Text', serif;
+    }
+  }
+  
   

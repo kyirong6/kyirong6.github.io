@@ -1,0 +1,30 @@
+{
+
+    "timeline": [
+        {
+            "date": "January 2021",
+            "description": "Incoming Data Scientist and Software Development Intern at Better Cart"
+        },
+
+        {
+            "date": "November 2020",
+            "description": "Awarded 2nd place for the Technical Solutions category at the SFU Business Analytics Hackathon"
+        },
+
+        {
+            "date": "May 2020",
+            "description": "Worked as a Junior Data Scientist Intern for the CBSA where I implemented a model for Language Identification. Moreover, I contributed to a COVID-19 related project."
+
+        },
+
+        {
+            "date": "December 2019",
+            "description": "Participated in the BC Student AI Showcase where I presented a multi-target classification model for categorizing toxic comments."
+        }
+    ]
+
+
+
+
+
+}
