@@ -30,14 +30,14 @@ $photo-bp: 500px;
     }
   
     &__affiliation {
-      margin-bottom: 0px;
+      margin-bottom: ($spacer / 2);
       margin-top: 0px;
       font-family: 'Open Sans', sans-serif;
     }
   
     &__contact {
       font-family: 'Source Sans Pro', sans-serif;
-      margin-top: 10px;
+      margin-top: 0px
     }
 
     &__photo {
