@@ -59,6 +59,8 @@ $photo-bp: 500px;
 
     &__photo-wrapper {
       position: relative;
+      font-family: 'Lora', serif;
+      font-style: italic;
 
       &::before {
         position: absolute;

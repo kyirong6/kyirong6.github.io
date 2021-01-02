@@ -1,5 +1,5 @@
 I'm currently an undergraduate student at [SFU](https://www.sfu.ca) finishing a BSc in both **Computer Science** and **Statistics**. At the moment, I mentor 1st and 2nd year undergraduate Statistics students through [SASSA](http://www.sfu.ca/sassa/). I will be joining [BetterCart](https://bettercart.ca/home), a Canadian startup, as a Data Scientist and Software Development Intern for Winter 2021. Previously, I worked in the Data Analytics division of the Strategic Policy Branch at the [CBSA](https://www.cbsa-asfc.gc.ca/menu-eng.html) as a Junior Data Scientist Intern.
 
-My interests comprise of practical and ethical applications of machine learning and musical composition through deep learning. If i'm not on my computer, you'll most likely find me on the basketball court, soccer pitch, or playing/listening to [music](https://open.spotify.com/playlist/5nnUhG5qJfB8Pzs7Vodlii?si=v3lE_DKHSBaygH-eEBzpBQ). 
+My interests comprise of practical and ethical applications of machine learning and musical composition through deep learning. If I'm not on my computer, you'll most likely find me on the basketball court, soccer pitch, or playing/listening to [music](https://open.spotify.com/playlist/5nnUhG5qJfB8Pzs7Vodlii?si=v3lE_DKHSBaygH-eEBzpBQ). 
 
-Just in case you're wondering, my (middle/preffered) name is pronounced: chŭn'dən
+Click the button below to check out some of the things I've learnt about you!
