@@ -3,11 +3,11 @@ function display() {
     let apiKey = '6fdd827b8537932ca73b7ef5664ea84e58fbe8e355572486f5973cdf';
     // this is bad practice, but for this simple static site it's fine for now.
     information(`https://api.ipdata.co?api-key=${apiKey}`).then(data => {
-    ip = data.ip;
-    city = data.city;
-    postal = data.postal;
-    lat = data.latitude;
-    lon = data.longitude;
+    ip = data.ip || "I couldn't find this...";
+    city = data.city || "Nothing here...";
+    postal = data.postal || "Hmmm...Nothing here";
+    lat = data.latitude || "Got Nothing";
+    lon = data.longitude || "Nothing to see here...";
     message = `Browser: ${browserName}\nCity: ${city}\nIP Address: ${ip}\nCurrent Postal Code: ${postal}\nLAT of IP: ${lat}\nLON of IP: ${lon}`
     alert(message);
     }).catch(error => alert("I couldn't find anything about you!"));;
