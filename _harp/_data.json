@@ -2,8 +2,13 @@
 
     "timeline": [
         {
+          "date": "May 2021",
+          "description": "Started as a Machine Learning Engineer Intern at WorkSafeBc's Innovation Team."
+
+        }, 
+        {
             "date": "Jan 2021",
-            "description": "Incoming Data Scientist and Software Development Intern at BetterCart."
+            "description": "Data Scientist and Software Development Intern at BetterCart."
         },
 
         {
