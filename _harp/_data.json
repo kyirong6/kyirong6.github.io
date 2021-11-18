@@ -2,6 +2,10 @@
 
     "timeline": [
         {
+          "date": "Sep 2021",
+          "description": "3rd Place Overall at the <a href=\"https://www.vancouverdatajam.ca/\">Vancouver DataJam</a>"
+        },
+        {
           "date": "May 2021",
           "description": "Started as a Machine Learning Engineer Intern at WorkSafeBc's Innovation Team."
 
