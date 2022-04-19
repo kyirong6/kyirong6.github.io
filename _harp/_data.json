@@ -2,6 +2,10 @@
 
     "timeline": [
         {
+          "date": "Jan 2022",
+          "description": "Started Data Engineering Internship at <a href=\"https://research.samsung.com/srca\">Samsung Research Canada</a>"
+        },
+        {
           "date": "Sep 2021",
           "description": "3rd Place Overall at the <a href=\"https://www.vancouverdatajam.ca/\">Vancouver DataJam</a>"
         },
@@ -9,7 +13,7 @@
           "date": "May 2021",
           "description": "Started as a Machine Learning Engineer Intern at WorkSafeBc's Innovation Team."
 
-        }, 
+        },
         {
             "date": "Jan 2021",
             "description": "Data Scientist and Software Development Intern at BetterCart."
@@ -46,7 +50,7 @@
             "date": "May 2017",
             "description": "Instructed a class on Java and OOP concepts for ~60 students in association with Illuminate."
         },
-        
+
         {
           "date": "Sep 2014",
           "description": "Started Jazz Performance undergraduate studies at the University of Toronto."
