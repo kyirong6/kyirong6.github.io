@@ -1,10 +1,11 @@
 I'm currently an undergraduate student at [SFU](https://www.sfu.ca) finishing a BSc in both **Computer Science** and **Statistics**.
 
-I enjoy brainstorming and experimenting in order to build potential solutions to challenging problems.
+I enjoy problem solving and the various elements that characterize the art of such processes. I often find myself curious about many things which leads me to learn, experiment, and dig deeper into the temporary unknown. 
 
-Moreover, I'm a musician who's curious about developing new ways to create, interact, and analyze music with the aid of machine learning. Check out some music I'm writing at my [soundcloud](https://soundcloud.com/choenden-kyirong) or the songs I've been listening to on my [spotify profile](https://open.spotify.com/user/12182139320?si=17bed67a334541f4).
+I'm currently working at BetterCart Analytics as a Software & NLP Engineer where I investigate and play around with textual data within the scope of product matching and similarities. Moreover, I also work on  Data & Software Engineering tasks that involve postgreSQL, ETL's, model deployment, and cloud technologies! Previously, I was working at Samsung Research Canada's [R&D Institute](https://research.samsung.com/srca) as a Data Engineering Intern.
 
-I'm currently working at [Samsung](https://www.samsung.com/ca/) at their [R&D Institute](https://research.samsung.com/srca) as a Data Engineering Intern.
+Furthermore, I'm a musician who's curious about developing new ways to create, interact, and understand music with the aid of techniques from information retrieval to machine learning. If interested, check out some music I'm -very slowly- writing on my [soundcloud](https://soundcloud.com/choenden-kyirong), the artists that influence me on my [spotify profile](https://open.spotify.com/user/12182139320?si=17bed67a334541f4), or come say "hey!" at any upcoming [shows](https://linktr.ee/ckyirong) I'm playing at with some very talented and inspiring friends.
+
 <!---Previously, I worked as a Machine Learning Engineer Intern for [WorkSafeBC](https://www.worksafebc.com/en) on the Innovation Team. Moreover, I also work as a Data Scientist and Software Developer for [BetterCart](https://bettercart.ca/home). Previously, I worked in the Data Analytics division of the Strategic Policy Branch at the [CBSA](https://www.cbsa-asfc.gc.ca/menu-eng.html) as a Junior Data Scientist Intern.
 I'm deeply passionate about music and the applications of AI to audio/music such as music information retrieval and composition. Moreover, I previously studied Jazz Performance for Trombone at the [University of Toronto](https://music.utoronto.ca/index.php). If I'm not on my computer, you'll most likely find me on the basketball court, soccer pitch, or playing/listening to [music](https://open.spotify.com/playlist/5nnUhG5qJfB8Pzs7Vodlii?si=v3lE_DKHSBaygH-eEBzpBQ).-->
 Click the button below to check out some of the things I've learnt about you!
