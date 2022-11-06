@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Improv Analysis</title>
+    <meta charset="utf-8">
+    <script src="https://unpkg.com/tone"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script>
+        var d3v4 = window.d3;
+        window.d3 = null;
+    </script>
+    <script src="https://d3js.org/d3.v6.js"></script>
+</head>
+<title>VIZ 3</title>
+  
+<style>
+
+    .links line {
+        stroke: #999;
+        stroke-opacity: 0.6;
+    }
+        
+    .nodes circle {
+        stroke: #fff;
+        stroke-width: 1.5px;
+    }
+    text {
+        font-family: 'Arial', sans-serif;
+        pointer-events: none;
+    }
+
+    body {
+        font-family: 'Arial', sans-serif;
+    }
+
+    #top-text {
+        text-align: left;
+    }
+
+    #viz{
+        text-align: center;
+    }
+
+    h2{
+        text-align: center;
+    }
+</style> 
+<body>
+    <div id="main_container">
+        <div id="top-text">
+            <h1>Visualizing Solo's From "So What" - Miles Davis</h1>
+            <p>
+                The goal for this visualization is to <b>explore</b>, <b>compare</b>, and <b>discover</b> ideas about improvization in the context of Jazz. More specifically, this was done
+                using MIDI data from solo's off of the track: "So What" by Miles Davis. The soloists are: Miles Davis (tmp), John Coltrane (ts), and Cannonball Adderley (as). The song can be found 
+                <a href="https://www.youtube.com/watch?v=ylXk1LBvIqU">here</a>.
+            </p>
+            <p>
+                The first viz is a simple one but is intended to abstract away information such as notes, pitch, and beats. Moreover, the goal for this viz was to gain an overall <b>structure</b>
+                of a solo. Through extensive MIDI preprocessing in python, I was able to organize the time and pitch in order to create this line graph. Things to notice are: peaks, valleys, 
+                jagged lines, or length. 
+            </p>
+            <p>
+                The second viz is intended to perform analysis on individual note selection from Miles and Coltrane's solo. The main node is the artist's names (signified by the colour red). 
+                The 2nd grouping are the chords: <b>Eb-11</b> and <b>D-11</b>. The <b>connections</b> made to these nodes represents notes that have been played within those chords in their respective solos.
+                The <b>thickness</b> of the line is corellated to how many times the note was played. The <b>colour</b> of the line signifies whether or not the note is <i>inside</i> (red) the chord 
+                or <i>outside</i> (green) the chord.
+            </p>
+            <p>
+                Lastly, the nodes are clickable to produce the pitch and chord in order to allow the user to harness auditory information. This helps for engagement and interactivity so you can hear
+                the information and relationships being shown by the viz.
+            </p>
+        </div>  
+        <h2>Visualizing The Landscape of Improvizations</h2>
+    </div>
+    <div id=viz>
+        <h4>Miles Davis</h4>
+        <div id="miles"></div>
+        <h4>John Coltrane</h4>
+        <div id="coltrane"></div>
+        <h4>Cannonball Adderley</h4>
+        <div id="adderly"></div>
+        <h4>Vizualizing Miles and Coltrane's Note Selection in Relation to Chords</h4>
+        <div id="notes">
+            <svg id="notes_svg" width="960" height="900"></svg>
+            <svg id="notes_coltrane" width="960" height="900"></svg>
+        </div>
+    </div>
+</body>
+<script>
+
+    // set the dimensions and margins of the graph
+    var margin = {top: 10, right: 30, bottom: 30, left: 60},
+        width = 1200 - margin.left - margin.right,
+        height = 300 - margin.top - margin.bottom;
+    
+    // append the svg object to the body of the page
+    var svg = d3.select("#miles")
+      .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+      .append("g")
+        .attr("transform",
+              `translate(${margin.left}, ${margin.top})`);
+    
+    
+    //Read the data
+    d3.csv("https://gist.githubusercontent.com/kyirong6/222d62ef9b1433094f386242b2abd681/raw/26c6cf988c383908f59832499e9cde105e0ec77f/miles_solo.csv",
+    
+
+      function(d){
+        return { time : d.time, value : d.midi }
+      }).then(
+
+    
+ 
+      function(data) {
+    
+
+        var x = d3.scaleLinear()
+          .domain([2,116])
+          .range([ 0, width ]);
+        xAxis = svg.append("g")
+          .attr("transform", `translate(0, ${height})`)
+          .call(d3.axisBottom(x))
+    
+        // Add Y axis
+        var y = d3.scaleLinear()
+          .domain([50, d3.max(data, function(d) { return +d.value; })])
+          .range([ height, 0 ]);
+        yAxis = svg.append("g")
+          .call(d3.axisLeft(y));
+    
+        var clip = svg.append("defs").append("svg:clipPath")
+            .attr("id", "clip")
+            .append("svg:rect")
+            .attr("width", width )
+            .attr("height", height )
+            .attr("x", 0)
+            .attr("y", 0);
+    
+        var brush = d3.brushX()                   // Add the brush feature using the d3.brush function
+            .extent( [ [0,0], [width,height] ] )  // initialise the brush area: start at 0,0 and finishes at width,height: it means I select the whole graph area
+            .on("end", updateChart)               // Each time the brush selection changes, trigger the 'updateChart' function
+
+        var line = svg.append('g')
+          .attr("clip-path", "url(#clip)")
+    
+        // Add the line
+        line.append("path")
+          .datum(data)
+          .attr("class", "line")  // I add the class line to be able to modify this line later on.
+          .attr("fill", "none")
+          .attr("stroke", "steelblue")
+          .attr("stroke-width", 1.5)
+          .attr("d", d3.line()
+            .x(function(d) { return x(d.time) })
+            .y(function(d) { return y(d.value) })
+            )
+    
+        // Add the brushing
+        line
+          .append("g")
+            .attr("class", "brush")
+            .call(brush);
+    
+ 
+        let idleTimeout
+        function idled() { idleTimeout = null; }
+    
+
+        function updateChart(event,d) {
+    
+          // What are the selected boundaries?
+          extent = event.selection
+
+          if(!extent){
+            if (!idleTimeout) return idleTimeout = setTimeout(idled, 350); // This allows to wait a little bit
+            x.domain([ 4,8])
+          }else{
+            x.domain([ x.invert(extent[0]), x.invert(extent[1]) ])
+            line.select(".brush").call(brush.move, null) // This remove the grey brush area as soon as the selection has been done
+          }
+    
+
+          xAxis.transition().duration(1000).call(d3.axisBottom(x))
+          line
+              .select('.line')
+              .transition()
+              .duration(1000)
+              .attr("d", d3.line()
+                .x(function(d) { return x(d.time) })
+                .y(function(d) { return y(d.value) })
+              )
+        }
+    
+        // If user double click, reinitialize the chart
+        svg.on("dblclick",function(){
+          x.domain([2,116])
+          xAxis.transition().call(d3.axisBottom(x))
+          line
+            .select('.line')
+            .transition()
+            .attr("d", d3.line()
+              .x(function(d) { return x(d.time) })
+              .y(function(d) { return y(d.value) })
+          )
+        });
+    })
+
+    </script>
+
+    <script>
+
+        // set the dimensions and margins of the graph
+        var margin = {top: 10, right: 30, bottom: 30, left: 60},
+            width = 1200 - margin.left - margin.right,
+            height = 300 - margin.top - margin.bottom;
+        
+        // append the svg object to the body of the page
+        var svg2 = d3.select("#coltrane")
+          .append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+          .append("g")
+            .attr("transform",
+                  `translate(${margin.left}, ${margin.top})`);
+        
+        //Read the data
+        d3.csv("https://gist.githubusercontent.com/kyirong6/8dd3a7b910e3da24fd63de71d98b58a1/raw/6a847d037750c484d42cdc253a0521cb2672ad57/coltrane_solo.csv",
+        
+          // When reading the csv, I must format variables:
+          function(d){
+            return { time : d.time, value : d.midi }
+          }).then(
+        
+          // Now I can use this dataset:
+          function(data) {
+        
+            // Add X axis --> it is a date format
+            var x2 = d3.scaleLinear()
+              .domain([2,110])
+              .range([ 0, width ]);
+            xAxis2 = svg2.append("g")
+              .attr("transform", `translate(0, ${height})`)
+              .call(d3.axisBottom(x2));
+        
+            // Add Y axis
+            var y2 = d3.scaleLinear()
+              .domain([50, d3.max(data, function(d) { return +d.value; })])
+              .range([ height, 0 ]);
+            yAxis2 = svg2.append("g")
+              .call(d3.axisLeft(y2));
+        
+  
+            var clip2 = svg2.append("defs").append("svg:clipPath")
+                .attr("id", "clip")
+                .append("svg:rect")
+                .attr("width", width )
+                .attr("height", height )
+                .attr("x", 0)
+                .attr("y", 0);
+        
+            var brush2 = d3.brushX()                   // Add the brush feature using the d3.brush function
+                .extent( [ [0,0], [width,height] ] )  // initialise the brush area: start at 0,0 and finishes at width,height: it means I select the whole graph area
+                .on("end", updateChart)               // Each time the brush selection changes, trigger the 'updateChart' function
+        
+            // Create the line variable: where both the line and the brush take place
+            var line2 = svg2.append('g')
+              .attr("clip-path", "url(#clip)")
+        
+            // Add the line
+            line2.append("path")
+              .datum(data)
+              .attr("class", "line")  // I add the class line to be able to modify this line later on.
+              .attr("fill", "none")
+              .attr("stroke", "red")
+              .attr("stroke-width", 1)
+              .attr("d", d3.line()
+                .x(function(d) { return x2(d.time) })
+                .y(function(d) { return y2(d.value) })
+                )
+        
+            // Add the brushing
+            line2
+              .append("g")
+                .attr("class", "brush")
+                .call(brush2);
+        
+            // A function that set idleTimeOut to null
+            let idleTimeout
+            function idled() { idleTimeout = null; }
+        
+            // A function that update the chart for given boundaries
+            function updateChart(event,d) {
+        
+              // What are the selected boundaries?
+              extent = event.selection
+        
+              // If no selection, back to initial coordinate. Otherwise, update X axis domain
+              if(!extent){
+                if (!idleTimeout) return idleTimeout = setTimeout(idled, 310); // This allows to wait a little bit
+                x2.domain([ 4,8])
+              }else{
+                x2.domain([ x2.invert(extent[0]), x2.invert(extent[1]) ])
+                line2.select(".brush").call(brush2.move, null) // This remove the grey brush area as soon as the selection has been done
+              }
+        
+              // Update axis and line position
+              xAxis2.transition().duration(1000).call(d3.axisBottom(x2))
+              line2
+                  .select('.line')
+                  .transition()
+                  .duration(1000)
+                  .attr("d", d3.line()
+                    .x(function(d) { return x2(d.time) })
+                    .y(function(d) { return y2(d.value) })
+                  )
+            }
+        
+            // If user double click, reinitialize the chart
+            svg2.on("dblclick",function(){
+              x2.domain([2,110])
+              xAxis2.transition().call(d3.axisBottom(x2))
+              line2
+                .select('.line')
+                .transition()
+                .attr("d", d3.line()
+                  .x(function(d) { return x2(d.time) })
+                  .y(function(d) { return y2(d.value) })
+              )
+            });
+        
+        })
+        </script>
+
+        <script>
+
+            // set the dimensions and margins of the graph
+            var margin = {top: 10, right: 30, bottom: 30, left: 60},
+                width = 1200 - margin.left - margin.right,
+                height = 300 - margin.top - margin.bottom;
+            
+            // append the svg object to the body of the page
+            var svg3 = d3.select("#adderly")
+              .append("svg")
+                .attr("width", width + margin.left + margin.right)
+                .attr("height", height + margin.top + margin.bottom)
+              .append("g")
+                .attr("transform",
+                      `translate(${margin.left}, ${margin.top})`);
+            
+            //Read the data
+            d3.csv("https://gist.githubusercontent.com/kyirong6/2862a7ce807ba7a55dd77fd23299338a/raw/f0e304055e9f8d3bc4cfe4182fdf5c6f4e6aef99/adderly_solo.csv",
+            
+              // When reading the csv, I must format variables:
+              function(d){
+                //console.log({ time : d.time, value : d.midi });
+                return { time : d.time, value : d.midi }
+              }).then(
+            
+              // Now I can use this dataset:
+              function(data3) {
+                  
+            
+                // Add X axis --> it is a date format
+                var x3 = d3.scaleLinear()
+                  .domain([3,108])
+                  .range([ 0, width ]);
+                xAxis3 = svg3.append("g")
+                  .attr("transform", `translate(0, ${height})`)
+                  .call(d3.axisBottom(x3));
+            
+                // Add Y axis
+                var y3 = d3.scaleLinear()
+                  .domain([50, d3.max(data3, function(d) { return +d.value; })])
+                  .range([ height, 0 ]);
+                yAxis3 = svg3.append("g")
+                  .call(d3.axisLeft(y3));
+            
+                // Add a clipPath: everything out of this area won't be drawn.  
+                var clip3 = svg3.append("defs").append("svg:clipPath")
+                    .attr("id", "clip")
+                    .append("svg:rect")
+                    .attr("width", width )
+                    .attr("height", height )
+                    .attr("x", 0)
+                    .attr("y", 0);
+            
+                // Add brushing
+                var brush3 = d3.brushX()                   // Add the brush feature using the d3.brush function
+                    .extent( [ [0,0], [width,height] ] )  // initialise the brush area: start at 0,0 and finishes at width,height: it means I select the whole graph area
+                    .on("end", updateChart)               // Each time the brush selection changes, trigger the 'updateChart' function
+            
+                // Create the line variable: where both the line and the brush take place
+                var line3 = svg3.append('g')
+                  .attr("clip-path", "url(#clip)")
+            
+                // Add the line
+                line3.append("path")
+                  .datum(data3)
+                  .attr("class", "line")  // I add the class line to be able to modify this line later on.
+                  .attr("fill", "none")
+                  .attr("stroke", "green")
+                  .attr("stroke-width", 1)
+                  .attr("d", d3.line()
+                    .x(function(d) { return x3(d.time) })
+                    .y(function(d) { return y3(d.value) })
+                    )
+            
+                // Add the brushing
+                line3
+                  .append("g")
+                    .attr("class", "brush")
+                    .call(brush3);
+            
+                // A function that set idleTimeOut to null
+                let idleTimeout
+                function idled() { idleTimeout = null; }
+            
+                // A function that update the chart for given boundaries
+                function updateChart(event,d) {
+            
+                  // What are the selected boundaries?
+                  extent = event.selection
+            
+                  // If no selection, back to initial coordinate. Otherwise, update X axis domain
+                  if(!extent){
+                    if (!idleTimeout) return idleTimeout = setTimeout(idled, 310); // This allows to wait a little bit
+                    x3.domain([ 4,8])
+                  }else{
+                    x3.domain([ x3.invert(extent[0]), x3.invert(extent[1]) ])
+                    line3.select(".brush").call(brush3.move, null) // This remove the grey brush area as soon as the selection has been done
+                  }
+            
+                  // Update axis and line position
+                  xAxis3.transition().duration(1000).call(d3.axisBottom(x3))
+                  line3
+                      .select('.line')
+                      .transition()
+                      .duration(1000)
+                      .attr("d", d3.line()
+                        .x(function(d) { return x3(d.time) })
+                        .y(function(d) { return y3(d.value) })
+                      )
+                }
+            
+                // If user double click, reinitialize the chart
+                svg3.on("dblclick",function(){
+                  x3.domain([3,108])
+                  xAxis3.transition().call(d3.axisBottom(x3))
+                  line3
+                    .select('.line')
+                    .transition()
+                    .attr("d", d3.line()
+                      .x(function(d) { return x3(d.time) })
+                      .y(function(d) { return y3(d.value) })
+                  )
+                });
+            
+            })
+            </script>
+            <script>
+
+                var svg4 = d3v4.select("#notes_svg"),
+                width_notes = +svg4.attr("width"),
+                height_notes = +svg4.attr("height");
+
+
+                var color = d3v4.scaleOrdinal(d3v4.schemeCategory20);
+                
+                var simulation = d3v4.forceSimulation()
+                    .force("link", d3v4.forceLink().id(function(d) { return d.id; }).distance(350))
+                    .force("charge", d3v4.forceManyBody())
+                    .force("center", d3v4.forceCenter(width_notes / 2, height_notes / 2))
+                
+                    d3v4.json("https://gist.githubusercontent.com/kyirong6/4ec8ba116a3510638a83c5112c401593/raw/d8ce9c248668061ee6861cd660afc93143cd737c/miles_notes.json", function(error, graph) {
+                  if (error) throw error;
+                  console.log(graph)
+                
+                  var link = svg4.append("g")
+                      .attr("class", "links")
+                    .selectAll("line")
+                    .data(graph.links)
+                    .enter().append("line")
+                      .attr("stroke-width", function(d) { return Math.sqrt(d.value); })
+                      .style("stroke", function(d){
+                        return d.colour
+                        });
+                
+                  var node = svg4.append("g")
+                      .attr("class", "nodes")
+                    .selectAll("g")
+                    .data(graph.nodes)
+                    .enter().append("g")
+                
+                  var circles = node.append("circle")
+                    .attr("r", 5)
+                    .attr("fill", function(d) { return color(d.group); });
+                
+                  // Create a drag handler and append it to the node object instead
+                  var drag_handler = d3v4.drag()
+                      .on("start", dragstarted)
+                      .on("drag", dragged)
+                      .on("end", dragended);
+                
+                  drag_handler(node);
+                  
+                  var lables = node.append("text")
+                      .text(function(d) {
+                        return d.id;
+                      })
+                      .attr('x', 6)
+                      .attr('y', 3);
+                
+                  node.append("title")
+                      .text(function(d) { return d.id; });
+                
+                  simulation
+                      .nodes(graph.nodes)
+                      .on("tick", ticked);
+                
+                  simulation.force("link")
+                      .links(graph.links);
+                
+                  function ticked() {
+                    link
+                        .attr("x1", function(d) { return d.source.x; })
+                        .attr("y1", function(d) { return d.source.y; })
+                        .attr("x2", function(d) { return d.target.x; })
+                        .attr("y2", function(d) { return d.target.y; });
+                
+                    node
+                        .attr("transform", function(d) {
+                          return "translate(" + d.x + "," + d.y + ")";
+                        })
+                  }
+                });
+                
+                function dragstarted(d) {
+                  playNote(d.id)
+                  console.log(d.id)
+                  if (!d3v4.event.active) simulation.alphaTarget(0.3).restart();
+                  d.fx = d.x;
+                  d.fy = d.y;
+                }
+                
+                function dragged(d) {
+                  d.fx = d3v4.event.x;
+                  d.fy = d3v4.event.y;
+                }
+                
+                function dragended(d) {
+                  if (!d3v4.event.active) simulation.alphaTarget(0);
+                  d.fx = null;
+                  d.fy = null;
+                }
+                function playNote(note) {
+                    if (note == "Eb-11") {
+                        const synth = new Tone.PolySynth(Tone.Synth).toDestination();
+                        const now = Tone.now()
+                        synth.triggerAttack("Eb4", now);
+                        synth.triggerAttack("Gb4", now + 0.5);
+                        synth.triggerAttack("Bb4", now + 1);
+                        synth.triggerAttack("Db5", now + 1.5);
+                        synth.triggerAttack("Ab5", now + 2);
+                        synth.triggerRelease(["Eb4", "Gb4", "Bb4", "Db5", "Ab5"], now + 4);
+                        return;
+                    }
+                    if (note == "D-11") {
+                        const synth = new Tone.PolySynth(Tone.Synth).toDestination();
+                        const now = Tone.now()
+                        synth.triggerAttack("D4", now);
+                        synth.triggerAttack("F4", now + 0.5);
+                        synth.triggerAttack("A4", now + 1);
+                        synth.triggerAttack("C5", now + 1.5);
+                        synth.triggerAttack("G5", now + 2);
+                        synth.triggerRelease(["D4", "F4", "A4", "C5", "G5"], now + 4);
+                        return;
+                    }
+                    if (note != "Miles Davis" & note != "John Coltrane" & note != "Cannonball Adderley") {
+                        // create a synth
+                        note = note + "5"
+                        const synth = new Tone.Synth().toDestination();
+                        // play a note from that synth
+                        synth.triggerAttackRelease(note, "8n");
+                    }
+                }
+            </script>
+            <script>
+
+                var svg5 = d3v4.select("#notes_coltrane"),
+                width_notes = +svg5.attr("width"),
+                height_notes = +svg5.attr("height");
+                // select the svg area
+
+                // Handmade legend
+                svg5.append("circle").attr("cx",200).attr("cy",70).attr("r", 8).style("fill", "red")
+                svg5.append("circle").attr("cx",200).attr("cy",100).attr("r", 8).style("fill", "MediumSeaGreen")
+                svg5.append("circle").attr("cx",200).attr("cy",130).attr("r", 8).style("fill", "HotPink")
+                svg5.append("text").attr("x", 220).attr("y", 70).text("Artist").style("font-size", "20px").attr("alignment-baseline","middle")
+                svg5.append("text").attr("x", 220).attr("y", 100).text("Inside of Chord").style("font-size", "20px").attr("alignment-baseline","middle")
+                svg5.append("text").attr("x", 220).attr("y", 130).text("Outside of Chord").style("font-size", "20px").attr("alignment-baseline","middle")
+
+
+
+                var color = d3v4.scaleOrdinal(d3v4.schemeCategory20);
+                
+                var simulation2 = d3v4.forceSimulation()
+                    .force("link", d3v4.forceLink().id(function(d) { return d.id; }).distance(350))
+                    .force("charge", d3v4.forceManyBody())
+                    .force("center", d3v4.forceCenter(width_notes / 2, height_notes / 2))
+                
+                    d3v4.json("https://gist.githubusercontent.com/kyirong6/0fdaa56c515c3be8a2edc4c81379140a/raw/9313e5e35116ba579bd963c640bcb3950113d962/coltrane_notes.json", function(error, graph) {
+                  if (error) throw error;
+                  console.log(graph)
+                
+                  var link = svg5.append("g")
+                      .attr("class", "links")
+                    .selectAll("line")
+                    .data(graph.links)
+                    .enter().append("line")
+                      .attr("stroke-width", function(d) { return Math.sqrt(d.value); })
+                      .style("stroke", function(d){
+                        return d.colour
+                        });
+                
+                  var node = svg5.append("g")
+                      .attr("class", "nodes")
+                    .selectAll("g")
+                    .data(graph.nodes)
+                    .enter().append("g")
+                
+                  var circles = node.append("circle")
+                    .attr("r", 5)
+                    .attr("fill", function(d) { return color(d.group); });
+                
+                  // Create a drag handler and append it to the node object instead
+                  var drag_handler = d3v4.drag()
+                      .on("start", dragstarted2)
+                      .on("drag", dragged2)
+                      .on("end", dragended2);
+                
+                  drag_handler(node);
+                  
+                  var lables = node.append("text")
+                      .text(function(d) {
+                        return d.id;
+                      })
+                      .attr('x', 6)
+                      .attr('y', 3);
+                
+                  node.append("title")
+                      .text(function(d) { return d.id; });
+                
+                  simulation2
+                      .nodes(graph.nodes)
+                      .on("tick", ticked);
+                
+                  simulation2.force("link")
+                      .links(graph.links);
+                
+                  function ticked() {
+                    link
+                        .attr("x1", function(d) { return d.source.x; })
+                        .attr("y1", function(d) { return d.source.y; })
+                        .attr("x2", function(d) { return d.target.x; })
+                        .attr("y2", function(d) { return d.target.y; });
+                
+                    node
+                        .attr("transform", function(d) {
+                          return "translate(" + d.x + "," + d.y + ")";
+                        })
+                  }
+                });
+                
+                function dragstarted2(d) {
+                  playNote(d.id)
+                  console.log(d.id)
+                  if (!d3v4.event.active) simulation2.alphaTarget(0.3).restart();
+                  d.fx = d.x;
+                  d.fy = d.y;
+                }
+                
+                function dragged2(d) {
+                  d.fx = d3v4.event.x;
+                  d.fy = d3v4.event.y;
+                }
+                
+                function dragended2(d) {
+                  if (!d3v4.event.active) simulation2.alphaTarget(0);
+                  d.fx = null;
+                  d.fy = null;
+                }
+                function playNote(note) {
+                    if (note == "Eb-11") {
+                        const sampler = new Tone.Sampler({
+                            urls: {
+                                "C4": "C4.mp3",
+                                "D#4": "Ds4.mp3",
+                                "F#4": "Fs4.mp3",
+                                "A4": "A4.mp3",
+                            },
+                            release: 1,
+                            baseUrl: "https://tonejs.github.io/audio/salamander/",
+                        }).toDestination();
+                        
+                        Tone.loaded().then(() => {
+                            sampler.triggerAttackRelease(["Eb3", "Gb3", "Bb3", "Db4", "Ab4"], 3);
+                        })
+                        return;
+                    }
+                    if (note == "D-11") {
+                        const sampler = new Tone.Sampler({
+                            urls: {
+                                "C4": "C4.mp3",
+                                "D#4": "Ds4.mp3",
+                                "F#4": "Fs4.mp3",
+                                "A4": "A4.mp3",
+                            },
+                            release: 1,
+                            baseUrl: "https://tonejs.github.io/audio/salamander/",
+                        }).toDestination();
+                        
+                        Tone.loaded().then(() => {
+                            sampler.triggerAttackRelease(["D3", "F3", "A3", "C4", "G4"], 3);
+                        })
+                        return;
+                    }
+                    if (note != "Miles Davis" & note != "John Coltrane" & note != "Cannonball Adderley") {
+                        // create a synth
+                        note = note + "4"
+                        const sampler = new Tone.Sampler({
+                            urls: {
+                                "C4": "C4.mp3",
+                                "D#4": "Ds4.mp3",
+                                "F#4": "Fs4.mp3",
+                                "A4": "A4.mp3",
+                            },
+                            release: 1,
+                            baseUrl: "https://tonejs.github.io/audio/salamander/",
+                        }).toDestination();
+                        
+                        Tone.loaded().then(() => {
+                            sampler.triggerAttackRelease([note], 3);
+                        })
+                        return;
+                    }
+                }
+            </script>
+</html>

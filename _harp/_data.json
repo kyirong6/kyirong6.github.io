@@ -1,5 +1,13 @@
 {
 
+    "projects": [
+      {
+        "title": "<a href=\"assets/projects/music_viz/index.html\">Visualizing Melody, Harmony, & Improvisation</a>",
+        "description": "How can people unfamiliar with harmony and theory better understand jazz improvizations or music in general? I attempt to explore new ways of understanding and analyzing music through custom interactive visualizations. Visualizations were made in d3.js and the data is primarily MIDI format. "
+      }
+
+    ],
+
     "timeline": [
         {
           "date": "Jan 2022",
