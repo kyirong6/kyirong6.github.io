@@ -1,7 +1,7 @@
 ---
 title: "About"
 date: 2023-04-18T23:49:51-07:00
-draft: true
+draft: false
 ---
 
 {{< figure src="https://raw.githubusercontent.com/kyirong6/kyirong6.github.io/main/static/images/trombone_portrait.jpeg" alt="image" width="300px">}}
