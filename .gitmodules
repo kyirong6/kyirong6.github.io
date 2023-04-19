@@ -1,0 +1,6 @@
+[submodule "my_blog/themes/hugo-bearcub"]
+	path = my_blog/themes/hugo-bearcub
+	url = https://github.com/clente/hugo-bearcub
+[submodule "my_blog/themes/hugo-bearblog"]
+	path = my_blog/themes/hugo-bearblog
+	url = https://github.com/janraasch/hugo-bearblog.git
