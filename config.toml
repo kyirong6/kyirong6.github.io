@@ -8,7 +8,7 @@ theme = 'hugo-bearblog'
 # Basic metadata configuration for your blog.
 title = "Choenden Kyirong"
 author = "Choenden Kyirong"
-copyright = "Copyright © 2023, Choenden Kyirong."
+copyright = "Copyright © 2025, Choenden Kyirong."
 languageCode = "en-US"
 
 # Generate a nice robots.txt for SEO
@@ -17,6 +17,10 @@ enableRobotsTXT = true
 # Generate "Bearblog"-like URLs !only!, see https://bearblog.dev/.
 disableKinds = ["taxonomy"]
 ignoreErrors = ["error-disable-taxonomy"]
+
+# Allow raw HTML in markdown (needed for custom divs)
+[markup.goldmark.renderer]
+  unsafe = true
 [permalinks]
   blog = '/:year/:month/:day/:slug/'
 

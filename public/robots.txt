@@ -1,0 +1,2 @@
+User-Agent: *
+Sitemap: https://kyirong6.github.io/sitemap.xml
