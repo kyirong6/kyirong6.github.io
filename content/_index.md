@@ -17,8 +17,7 @@ draft: false
   </div>
 </div>
 
-
-I'm currently doing my MSc in Sound and Music Computing at Universitat Pompeu Fabra within the [Music Technology Group](https://www.upf.edu/web/mtg). I'm interested in Computational Music, Human-Centered AI, Music Information Retrieval, Music Structure, and Improvisation.
+I'm currently doing my MSc in Sound and Music Computing at Universitat Pompeu Fabra within the [Music Technology Group](https://www.upf.edu/web/mtg). I'm interested in Computational Music, Human-Centered AI, Generative Models, Music Structure, and Improvisation.
 
 At BetterCart Analytics, I work as a Machine Learning Engineer on the ML/Data platform where I lead Machine Learning features and Information Retrieval systems that includes over 60,000,000 new records per week across 6,000+ stores and 100+ retailers.
 
