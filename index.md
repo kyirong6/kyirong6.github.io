@@ -1,7 +1,7 @@
 ---
 layout: page
 ---
-<img src="/me.JPG" alt="Choenden Kyirong" style="float: left; margin-right: 1rem; margin-bottom: 1rem; width: 150px; border-radius: 4px;">
+<img src="/me.JPG" alt="Choenden Kyirong" style="float: left; margin-right: 1rem; margin-bottom: 1rem; width: 150px;">
 
 I'm a computer scientist and jazz trombonist exploring the intersection of music and machine learning. My interests center around Computational Creativity, Music Information Retrieval, and Generative Models.
 
