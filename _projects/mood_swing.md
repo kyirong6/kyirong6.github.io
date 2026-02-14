@@ -7,4 +7,4 @@ date: 2026-02-14
 
 ![Mood Swing interface](/images/mood_swing.png)
 
-Mood Swing is a co-creative tool. Interacting with the canvas controls harmonic mood and a pre-trained DistilGPT2 architecture based model autoregressively generates harmonic and melodic gestures based on the coordinates and you pass through or occupy.
+Mood Swing is a co-creative tool. Interacting with the canvas controls harmonic mood and a pre-trained DistilGPT2 architecture based model autoregressively generates harmonic and melodic gestures based on the coordinates you pass through or occupy.
