@@ -3,7 +3,7 @@ layout: page
 ---
 <img src="/images/me.JPG" alt="Choenden Kyirong" style="float: left; margin-right: 1rem; margin-bottom: 1rem; width: 150px;">
 
-I'm a computer scientist and jazz trombonist exploring the intersection of creativity and machine learning. I'm particularly interested in Computational Creativity, Music Information Retrieval, and Artist-First AI.
+I'm a researcher and jazz trombonist exploring the intersection of creativity and machine learning. I'm particularly interested in Interpretability, Generative Audio/Music, Controllable Generation, and Human-Centered AI.
 
 I'm currently doing my MSc in Sound and Music Computing in the *[Music Technology Group](https://www.upf.edu/web/mtg)* at the *Universitat Pompeu Fabra* in Barcelona, Spain, where I'm supervised by [Martín Rocamora](https://rocamora.uy) and co-supervised by [Laura Ibáñez-Martínez](https://scholar.google.com/citations?user=EczEU_cAAAAJ&hl=ca) and [Pablo Alonso-Jiménez](https://scholar.google.es/citations?user=6CUexcEAAAAJ&hl=es). Previously, I was at *[Simon Fraser University](http://www.sfu.ca/fas/computing.html)* where I double majored in Computer Science and Statistics.
 
