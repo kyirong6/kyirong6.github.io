@@ -11,7 +11,7 @@ Before pivoting to Computer Science, I was a recipient of the Moe Koffman Memori
 
 At BetterCart Analytics, I work as a Machine Learning Engineer on the ML/Data platform, where I've led ML and IR systems processing over 60,000,000 new records per week across 6,000+ stores and 100+ retailers. My work spans Retrieval Systems, End-to-End ML Pipelines, and Data Orchestration & Deployment.
 
-I grew up on the west coast, play a lot of basketball/tennis, and am constantly slamming my head against the wall trying to finish up compositions. Feel free to reach out for collaborations—analog or digital!
+I grew up in the pacific northwest, play a lot of basketball/tennis, and am constantly slamming my head against the wall trying to finish up compositions. Feel free to reach out for collaborations—analog or digital!
 
 <blockquote class="twitter-tweet" data-width="350"><a href="https://twitter.com/CKyirong/status/1599224170004742144"></a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
