@@ -8,9 +8,10 @@ url:         "https://www.choendenkyirong.com"
 date_format: "%b %-d, %Y"
 header_pages:
  - cv.html
- - research.html
  - projects.html
  - blog/index.html
+ - photos.html
+ - music.html
  - contact.md
 
 # Google services
