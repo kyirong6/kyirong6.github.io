@@ -53,8 +53,8 @@ $darken-3: rgba(#000,.25) !default;
 $darken-4: rgba(#000,.5) !default;
 
 // Links
-$link-color: $blue;
-$link-hover-color: darken($blue, 40%);
+$link-color: #005fb8;
+$link-hover-color: darken($link-color, 25%);
 
 // Breakpoints
 $breakpoint-md: '(min-width: 52em)';
@@ -93,7 +93,7 @@ $form-field-padding-x: .5rem;
 
 // Code
 $pre-border-radius: 0;
-$pre-background-color: #fafafa;
+$pre-background-color: #ece2d5;
 $hljs-comment: $mid-gray;
 $hljs-keyword: $dark-blue;
 $hljs-name: $dark-gray;
@@ -115,7 +115,7 @@ $hljs-chunk: $light-gray;
 // Header
 $header-border-top: thin solid #f3f3f3;
 $header-color: $dark-gray;
-$header-bg-color: #fafafa;
+$header-bg-color: #f4ede4;
 $header-font-weight: 400;
 
 // Nav
@@ -130,6 +130,6 @@ $nav-active-border-bottom: 1px solid $light-gray;
 $footer-border-top: thin solid #f3f3f3;
 $footer-padding: $space-3;
 $footer-color: #7a7a7a;
-$footer-bg-color: #fafafa;
+$footer-bg-color: #f4ede4;
 $footer-font-weight: 300;
 $footer-font-size: .75rem;

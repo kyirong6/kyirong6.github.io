@@ -1,7 +1,7 @@
 .site-header {
   padding-top: $space-1;
   padding-bottom: $space-2;
-  border-bottom: $footer-border-top;
+  border-bottom: thin solid #e2d6c6;
 }
 
 .site-header a {
@@ -15,7 +15,7 @@
   font-size: 1.75rem;
   font-weight: 700;
   font-style: italic;
-  color: #ad1737;
+  color: #a4243b;
 }
 
 .site-nav {
