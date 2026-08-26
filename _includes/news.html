@@ -1,0 +1,14 @@
+{% assign news_items = site.data.news | sort: "date" | reverse %}
+{% if news_items.size > 0 %}
+<section class="news">
+  <h2 class="news-heading">News</h2>
+  <ul class="news-list">
+    {% for item in news_items %}
+      <li class="news-item">
+        <span class="news-date">{{ item.date | date: "%b %Y" }}</span>
+        <span class="news-body">{{ item.md | markdownify | remove: '<p>' | remove: '</p>' }}</span>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}

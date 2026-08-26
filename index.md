@@ -13,5 +13,7 @@ At BetterCart Analytics, I work as a Machine Learning Engineer on the ML/Data pl
 
 I grew up in the pacific northwest, play a lot of basketball/tennis, and am constantly slamming my head against the wall trying to finish up compositions. Come say "hey" at any upcoming [shows](https://linktr.ee/ckyirong) I'm playing with some very talented and inspiring friends and feel free to reach out for collaborations—analog or digital.
 
+{% include news.html %}
+
 <blockquote class="twitter-tweet" data-width="350"><a href="https://twitter.com/CKyirong/status/1599224170004742144"></a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
