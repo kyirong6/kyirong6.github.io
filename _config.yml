@@ -6,12 +6,15 @@ description: Choenden Kyirong is a Master's student at the Music Technology Grou
 baseurl:     ""
 url:         "https://www.choendenkyirong.com"
 date_format: "%b %-d, %Y"
+include:
+ - _pages
+
 header_pages:
- - cv.html
- - projects.html
- - photos.html
- - music.html
- - contact.md
+ - _pages/cv.html
+ - _pages/projects.html
+ - _pages/photos.html
+ - _pages/music.html
+ - _pages/contact.md
 
 # Google services
 google_verification:

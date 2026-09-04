@@ -1,5 +1,6 @@
 ---
 layout: page
+permalink: /
 hide_title: true
 ---
 <img src="/assets/images/mic_shot.jpg" alt="Choenden Kyirong" style="display: block; width: 100%; height: auto; margin-bottom: 1.5rem;">
