@@ -9,7 +9,6 @@ date_format: "%b %-d, %Y"
 header_pages:
  - cv.html
  - projects.html
- - blog/index.html
  - photos.html
  - music.html
  - contact.md
@@ -142,7 +141,4 @@ plugins:
 exclude:
   - Gemfile
   - Gemfile.lock
-  - Rakefile
-  - README.md
-  - screenshot.png
   - vendor
