@@ -3,6 +3,7 @@ layout: page
 title: Contact
 permalink: /contact/
 tags: contact
+hide_title: true
 ---
 
 [choendenkyirong@gmail.com](mailto:choendenkyirong@gmail.com)

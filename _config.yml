@@ -120,6 +120,13 @@ collections:
     output: true
     permalink: /projects/:name/
 
+# Front-matter defaults
+defaults:
+  - scope:
+      path: "songs"
+    values:
+      hide_title: true
+
 # Build settings
 markdown:     kramdown
 redcarpet:

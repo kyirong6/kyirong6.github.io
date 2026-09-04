@@ -1,0 +1,25 @@
+---
+layout: page
+---
+<div class="song-page">
+
+  <h1 class="song-title">{{ page.title }}</h1>
+
+  {% if page.video_id %}
+  <div class="video-embed">
+    <iframe
+      src="https://www.youtube-nocookie.com/embed/{{ page.video_id }}?rel=0&modestbranding=1"
+      title="{{ page.title }}"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
+  </div>
+  {% endif %}
+
+  <div class="song-writeup">
+    {{ content }}
+  </div>
+
+  <p><a href="/music/">← Back to music</a></p>
+
+</div>
