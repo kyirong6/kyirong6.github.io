@@ -4,6 +4,7 @@
     - 1.jpeg
     - 2.jpeg
     - 3.jpeg
+    - 4.jpeg
 
 - title: Paris 2026
   slug: paris-2026
@@ -19,6 +20,12 @@
     - 2.jpeg
     - 3.jpeg
     - 4.jpeg
+    - 5.jpeg
+
+- title: Dharamsala 2019
+  slug: dharamsala-2019
+  photos:
+    - 1.jpeg
 
 - title: Australia 2018
   slug: australia-2018
