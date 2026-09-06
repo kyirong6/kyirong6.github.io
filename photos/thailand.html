@@ -9,8 +9,8 @@ set: thailand
 <div class="photo-gallery">
   <div class="photo-grid">
     {% for photo in set.photos %}
-    <a href="/assets/images/photos/{{ photo.file }}" class="photo-item" data-caption="{{ photo.caption }}">
-      <img src="/assets/images/photos/{{ photo.file }}" alt="{{ photo.caption | default: set.title }}">
+    <a href="/assets/images/photos/{{ photo.file }}" class="photo-item" data-caption="{{ photo.caption | xml_escape }}">
+      <img src="/assets/images/photos/{{ photo.file }}" alt="{{ photo.caption | default: set.title | xml_escape }}">
     </a>
     {% endfor %}
   </div>

@@ -12,8 +12,8 @@ hide_title: true
     <a href="/photos/{{ set.slug }}/" class="photo-category-link"><h2>{{ set.title }}</h2></a>
     <div class="photo-grid">
       {% for photo in set.photos %}
-      <a href="/assets/images/photos/{{ photo.file }}" class="photo-item" data-caption="{{ photo.caption }}">
-        <img src="/assets/images/photos/{{ photo.file }}" alt="{{ photo.caption | default: set.title }}">
+      <a href="/assets/images/photos/{{ photo.file }}" class="photo-item" data-caption="{{ photo.caption | xml_escape }}">
+        <img src="/assets/images/photos/{{ photo.file }}" alt="{{ photo.caption | default: set.title | xml_escape }}">
       </a>
       {% endfor %}
     </div>
@@ -25,8 +25,8 @@ hide_title: true
     <div class="photo-grid">
       {% for set in site.data.photos %}
         {% for photo in set.photos %}
-      <a href="/assets/images/photos/{{ photo.file }}" class="photo-item" data-caption="{{ photo.caption }}">
-        <img src="/assets/images/photos/{{ photo.file }}" alt="{{ photo.caption | default: set.title }}">
+      <a href="/assets/images/photos/{{ photo.file }}" class="photo-item" data-caption="{{ photo.caption | xml_escape }}">
+        <img src="/assets/images/photos/{{ photo.file }}" alt="{{ photo.caption | default: set.title | xml_escape }}">
       </a>
         {% endfor %}
       {% endfor %}

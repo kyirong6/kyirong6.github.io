@@ -11,57 +11,57 @@
 - title: Spain
   slug: spain
   photos:
-    - file: spain/barcelona-2026/1.jpeg
-      caption: Barcelona
-    - file: spain/barcelona-2026/2.jpeg
-      caption: Barcelona
-    - file: spain/barcelona-2026/3.jpeg
-      caption: Barcelona
-    - file: spain/barcelona-2026/4.jpeg
-      caption: Barcelona
+    - file: spain/barcelona-2026/dudes_on_a_window.jpeg
+      caption: 2 dudes chilling on a window, Barcelona. 2026
+    - file: spain/barcelona-2026/cathedral_of_barcelona.jpeg
+      caption: Catedral de Barcelona, Barcelona. 2026
+    - file: spain/barcelona-2026/colorful_building.jpeg
+      caption: A colorful building, Barcelona. 2026
+    - file: spain/barcelona-2026/skateboarders_macba.jpeg
+      caption: Skateboarders at MACBA, Barcelona. 2026
 
 - title: France
   slug: france
   photos:
-    - file: france/paris-2026/1.jpg
-      caption: Paris
-    - file: france/paris-2026/2.jpg
-      caption: Paris
-    - file: france/paris-2026/3.jpeg
-      caption: Paris
+    - file: france/paris-2026/louvre.jpg
+      caption: Louvre, Paris. 2026
+    - file: france/paris-2026/arc_de_triomphe_tunnel.jpg
+      caption: Tunnel underneath the Arc de Triomphe, Paris. 2026
+    - file: france/paris-2026/man_sitting.jpeg
+      caption: '"The thinker" irl?, Paris. 2026'
 
 - title: Japan
   slug: japan
   photos:
-    - file: japan/tokyo-2025/1.jpeg
-      caption: Tokyo
-    - file: japan/tokyo-2025/2.jpeg
-      caption: Tokyo
-    - file: japan/tokyo-2025/3.jpeg
-      caption: Tokyo
-    - file: japan/tokyo-2025/4.jpeg
-      caption: Tokyo
-    - file: japan/tokyo-2025/5.jpeg
-      caption: Tokyo
+    - file: japan/tokyo-2025/tokyo_tower_below.jpeg
+      caption: Tokyo tower from below, Tokyo. 2025
+    - file: japan/tokyo-2025/tokyo_tower_street.jpeg
+      caption: Tokyo tower from street, Tokyo. 2025
+    - file: japan/tokyo-2025/tokyo_tower_above.jpeg
+      caption: Tokyo tower from above, Tokyo. 2025
+    - file: japan/tokyo-2025/mori_tower.jpeg
+      caption: Roppongi Hills Mori Tower, Tokyo. 2025
+    - file: japan/tokyo-2025/darumas.jpeg
+      caption: Darumas, Kyoto. 2025
 
 - title: Thailand
   slug: thailand
   photos:
-    - file: thailand/bangkok-2025/1.jpeg
-      caption: Bangkok
-    - file: thailand/bangkok-2025/2.jpeg
-      caption: Bangkok
+    - file: thailand/bangkok-2025/phra_nakhon_district.jpeg
+      caption: Phra Nakhon District, Bangkok. 2025
+    - file: thailand/bangkok-2025/wat_arun.jpeg
+      caption: Phra Prang at Wat Arun (The Temple of Dawn), Bangkok. 2025
 
 - title: India
   slug: india
   photos:
-    - file: india/dharamsala-2019/1.jpeg
-      caption: Dharamsala
+    - file: india/dharamsala-2019/monks_debating.jpeg
+      caption: Tibetan monks practicing ritualized philosophical debate in Tsuklakhang monastery, Dharamsala. 2019
 
 - title: Australia
   slug: australia
   photos:
     - file: australia/australia-2018/australia_wind_surfer.jpeg
-      caption: Wind surfing
+      caption: A wind surfer on a beach, Geelong. 2018
     - file: australia/australia-2018/marine_sanctuary.jpeg
-      caption: Marine sanctuary
+      caption: A beach, Geelong. 2018
