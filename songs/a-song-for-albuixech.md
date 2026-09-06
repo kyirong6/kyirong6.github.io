@@ -2,7 +2,7 @@
 layout: song
 title: A song for Albuixech
 permalink: /songs/a-song-for-albuixech/
-video_id: CstIfdxPYHk
+video_id: sc1-EVq_1i0
 ---
 
 I've had some ideas around creating music for imaginary films that don't exist by taking audio recordings of anything and writing complementary music. Music can steer emotions, suggest meaning, and surface ideas that sometimes aren't obviously accessible. It's a pretty powerful [tool](https://pmc.ncbi.nlm.nih.gov/articles/PMC10765015/) in that regard. Music can also be [hilarious](https://www.youtube.com/watch?v=ote9AdFKKaA), a [vehicle for political expression](https://www.youtube.com/watch?v=lAPZDoU4apk&list=PLZnzr1Uha8gvnmQUsf8Fr2DDwV31ZEjK8), and even be used as a [weapon](https://en.wikipedia.org/wiki/Music_in_psychological_operations). In this case, I'm just messing around with some ideas and need a place to organize it all.
