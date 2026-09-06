@@ -2,65 +2,66 @@
 # to an existing country rather than creating a new set.
 #
 # Each photo has:
-#   file:    path relative to /assets/images/photos/ (folder-per-city keeps
-#            the source organized as photos are dropped in)
+#   file:    path relative to /assets/images/photos/
+#            (nested as <country>/<city-year>/<filename> so future trips to
+#            the same country can drop in without renumbering)
 #   caption: shown in the lightbox on click; free-form
 #            (city, area, site, landmark, whatever fits)
 
 - title: Spain
   slug: spain
   photos:
-    - file: barcelona-2026/1.jpeg
+    - file: spain/barcelona-2026/1.jpeg
       caption: Barcelona
-    - file: barcelona-2026/2.jpeg
+    - file: spain/barcelona-2026/2.jpeg
       caption: Barcelona
-    - file: barcelona-2026/3.jpeg
+    - file: spain/barcelona-2026/3.jpeg
       caption: Barcelona
-    - file: barcelona-2026/4.jpeg
+    - file: spain/barcelona-2026/4.jpeg
       caption: Barcelona
 
 - title: France
   slug: france
   photos:
-    - file: paris-2026/1.jpg
+    - file: france/paris-2026/1.jpg
       caption: Paris
-    - file: paris-2026/2.jpg
+    - file: france/paris-2026/2.jpg
       caption: Paris
-    - file: paris-2026/3.jpeg
+    - file: france/paris-2026/3.jpeg
       caption: Paris
 
 - title: Japan
   slug: japan
   photos:
-    - file: tokyo-2025/1.jpeg
+    - file: japan/tokyo-2025/1.jpeg
       caption: Tokyo
-    - file: tokyo-2025/2.jpeg
+    - file: japan/tokyo-2025/2.jpeg
       caption: Tokyo
-    - file: tokyo-2025/3.jpeg
+    - file: japan/tokyo-2025/3.jpeg
       caption: Tokyo
-    - file: tokyo-2025/4.jpeg
+    - file: japan/tokyo-2025/4.jpeg
       caption: Tokyo
-    - file: tokyo-2025/5.jpeg
+    - file: japan/tokyo-2025/5.jpeg
       caption: Tokyo
 
 - title: Thailand
   slug: thailand
   photos:
-    - file: bangkok-2025/1.jpeg
+    - file: thailand/bangkok-2025/1.jpeg
       caption: Bangkok
-    - file: bangkok-2025/2.jpeg
+    - file: thailand/bangkok-2025/2.jpeg
       caption: Bangkok
 
 - title: India
   slug: india
   photos:
-    - file: dharamsala-2019/1.jpeg
+    - file: india/dharamsala-2019/1.jpeg
       caption: Dharamsala
 
 - title: Australia
   slug: australia
   photos:
-    - file: australia-2018/australia_wind_surfer.jpeg
+    - file: australia/australia-2018/australia_wind_surfer.jpeg
       caption: Wind surfing
-    - file: australia-2018/marine_sanctuary.jpeg
+    - file: australia/australia-2018/marine_sanctuary.jpeg
       caption: Marine sanctuary
