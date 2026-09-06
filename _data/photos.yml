@@ -1,40 +1,66 @@
-- title: Barcelona 2026
-  slug: barcelona-2026
-  photos:
-    - 1.jpeg
-    - 2.jpeg
-    - 3.jpeg
-    - 4.jpeg
+# Photo sets are grouped by country. As new trips happen, add more entries
+# to an existing country rather than creating a new set.
+#
+# Each photo has:
+#   file:    path relative to /assets/images/photos/ (folder-per-city keeps
+#            the source organized as photos are dropped in)
+#   caption: shown in the lightbox on click; free-form
+#            (city, area, site, landmark, whatever fits)
 
-- title: Paris 2026
-  slug: paris-2026
+- title: Spain
+  slug: spain
   photos:
-    - 1.jpg
-    - 2.jpg
-    - 3.jpeg
+    - file: barcelona-2026/1.jpeg
+      caption: Barcelona
+    - file: barcelona-2026/2.jpeg
+      caption: Barcelona
+    - file: barcelona-2026/3.jpeg
+      caption: Barcelona
+    - file: barcelona-2026/4.jpeg
+      caption: Barcelona
 
-- title: Tokyo 2025
-  slug: tokyo-2025
+- title: France
+  slug: france
   photos:
-    - 1.jpeg
-    - 2.jpeg
-    - 3.jpeg
-    - 4.jpeg
-    - 5.jpeg
+    - file: paris-2026/1.jpg
+      caption: Paris
+    - file: paris-2026/2.jpg
+      caption: Paris
+    - file: paris-2026/3.jpeg
+      caption: Paris
 
-- title: Bangkok 2025
-  slug: bangkok-2025
+- title: Japan
+  slug: japan
   photos:
-    - 1.jpeg
-    - 2.jpeg
+    - file: tokyo-2025/1.jpeg
+      caption: Tokyo
+    - file: tokyo-2025/2.jpeg
+      caption: Tokyo
+    - file: tokyo-2025/3.jpeg
+      caption: Tokyo
+    - file: tokyo-2025/4.jpeg
+      caption: Tokyo
+    - file: tokyo-2025/5.jpeg
+      caption: Tokyo
 
-- title: Dharamsala 2019
-  slug: dharamsala-2019
+- title: Thailand
+  slug: thailand
   photos:
-    - 1.jpeg
+    - file: bangkok-2025/1.jpeg
+      caption: Bangkok
+    - file: bangkok-2025/2.jpeg
+      caption: Bangkok
 
-- title: Australia 2018
-  slug: australia-2018
+- title: India
+  slug: india
   photos:
-    - australia_wind_surfer.jpeg
-    - marine_santuary.jpeg
+    - file: dharamsala-2019/1.jpeg
+      caption: Dharamsala
+
+- title: Australia
+  slug: australia
+  photos:
+    - file: australia-2018/australia_wind_surfer.jpeg
+      caption: Wind surfing
+    - file: australia-2018/marine_sanctuary.jpeg
+      caption: Marine sanctuary

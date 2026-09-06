@@ -1,17 +1,17 @@
 ---
 layout: page
-title: Archive
-permalink: /photos/archive/
+title: Australia
+permalink: /photos/australia/
+set: australia
 ---
 
+{% assign set = site.data.photos | where: "slug", page.set | first %}
 <div class="photo-gallery">
   <div class="photo-grid">
-    {% for set in site.data.photos %}
-      {% for photo in set.photos %}
+    {% for photo in set.photos %}
     <a href="/assets/images/photos/{{ photo.file }}" class="photo-item" data-caption="{{ photo.caption }}">
       <img src="/assets/images/photos/{{ photo.file }}" alt="{{ photo.caption | default: set.title }}">
     </a>
-      {% endfor %}
     {% endfor %}
   </div>
 </div>
