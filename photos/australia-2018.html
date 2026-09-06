@@ -2,15 +2,16 @@
 layout: page
 title: Australia 2018
 permalink: /photos/australia-2018/
+set: australia-2018
 ---
 
+{% assign set = site.data.photos | where: "slug", page.set | first %}
 <div class="photo-gallery">
   <div class="photo-grid">
-    <a href="/assets/images/photos/australia-2018/australia_wind_surfer.jpeg" class="photo-item">
-      <img src="/assets/images/photos/australia-2018/australia_wind_surfer.jpeg" alt="Australia 2018">
+    {% for photo in set.photos %}
+    <a href="/assets/images/photos/{{ set.slug }}/{{ photo }}" class="photo-item">
+      <img src="/assets/images/photos/{{ set.slug }}/{{ photo }}" alt="{{ set.title }}">
     </a>
-    <a href="/assets/images/photos/australia-2018/marine_santuary.jpeg" class="photo-item">
-      <img src="/assets/images/photos/australia-2018/marine_santuary.jpeg" alt="Australia 2018">
-    </a>
+    {% endfor %}
   </div>
 </div>

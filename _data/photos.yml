@@ -1,0 +1,27 @@
+- title: Barcelona 2026
+  slug: barcelona-2026
+  photos:
+    - 1.jpeg
+    - 2.jpeg
+    - 3.jpeg
+
+- title: Paris 2026
+  slug: paris-2026
+  photos:
+    - 1.jpg
+    - 2.jpg
+    - 3.jpeg
+
+- title: Tokyo 2025
+  slug: tokyo-2025
+  photos:
+    - 1.jpeg
+    - 2.jpeg
+    - 3.jpeg
+    - 4.jpeg
+
+- title: Australia 2018
+  slug: australia-2018
+  photos:
+    - australia_wind_surfer.jpeg
+    - marine_santuary.jpeg
