@@ -13,7 +13,7 @@ Before pivoting to Computer Science, I was a recipient of the Moe Koffman Memori
 
 At BetterCart Analytics, I work as a Machine Learning Engineer on the ML/Data platform, where I've led ML and IR systems processing over 60,000,000 new records per week across 6,000+ stores and 100+ retailers.
 
-I grew up in the pacific northwest, play a lot of basketball/tennis, and am constantly slamming my head against the wall trying to finish up compositions. Come say "hey" at any upcoming [shows](https://linktr.ee/ckyirong) I'm playing with some very talented and inspiring friends and feel free to reach out for collaborations—analog or digital.
+I grew up in the pacific northwest, play a lot of basketball/tennis, and am constantly slamming my head against the wall trying to finish up compositions. Come say "hey" at any upcoming [shows](https://linktr.ee/ckyirong) I'm playing with some very talented and inspiring friends or with the modern Brazilian-fusion group I'm a member of called [Amphibioux](https://amphibioux.com). Feel free to reach out for any collaborations—analog or digital!
 
 {% include news.html %}
 
