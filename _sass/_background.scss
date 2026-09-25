@@ -1,0 +1,39 @@
+// Decorative sine-wave backdrop.
+// Fixed behind every page; purely ornamental, so it never takes pointer events.
+//
+// The artwork is drawn at one constant pixel size and never rescales with the
+// viewport, so it reads the same at any window size: narrow windows crop the
+// sides, very wide ones leave the far edges bare.
+
+$background-image: '/assets/background/sine_waves.svg' !default;
+$background-opacity: 0.5 !default;
+$background-width: 1600px !default;
+$background-position: center bottom !default;
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: url($background-image);
+  background-repeat: no-repeat;
+  background-position: $background-position;
+  background-size: $background-width auto;
+  opacity: $background-opacity;
+
+  // Rasterize once onto its own compositor layer. Without this the browser
+  // repaints all 26 stroked paths as the page scrolls.
+  will-change: transform;
+  transform: translateZ(0);
+  contain: layout paint;
+}
+
+@media print {
+  body::before {
+    display: none;
+  }
+}

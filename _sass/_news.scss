@@ -17,13 +17,8 @@
   display: flex;
   align-items: baseline;
   padding: 0.35rem 0;
-  border-bottom: 1px solid #ece4d7;
   font-size: 0.95rem;
   line-height: 1.5;
-
-  &:last-child {
-    border-bottom: none;
-  }
 }
 
 .news-date {

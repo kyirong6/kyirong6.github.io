@@ -9,7 +9,7 @@ permalink: /photos/archive/
     {% for set in site.data.photos %}
       {% for photo in set.photos %}
     <a href="/assets/images/photos/{{ photo.file }}" class="photo-item" data-caption="{{ photo.caption | xml_escape }}">
-      <img src="/assets/images/photos/{{ photo.file }}" alt="{{ photo.caption | default: set.title | xml_escape }}">
+      <img src="/assets/images/photos/thumbs/{{ photo.file }}" alt="{{ photo.caption | default: set.title | xml_escape }}" loading="lazy" decoding="async">
     </a>
       {% endfor %}
     {% endfor %}
