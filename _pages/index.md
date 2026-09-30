@@ -5,9 +5,9 @@ hide_title: true
 ---
 <img src="/assets/images/mic_shot.jpg" alt="Choenden Kyirong" style="display: block; width: 100%; height: auto; margin-bottom: 1.5rem;">
 
-I'm an artist and researcher exploring the intersection of creativity, machine learning, and technology. I'm particularly interested in Generative Models, Multimodal AI, Computational Creativity, Human-Centered AI, and Creative Tools.
+Hey, I'm Choenden! I'm an artist and researcher exploring the intersection of creativity, machine learning, and technology. I'm particularly interested in Generative Models, Multimodal AI, Computational Creativity, Human-Centered AI, and Creative Tools.
 
-I'm currently doing my MSc in Sound and Music Computing in the *[Music Technology Group](https://www.upf.edu/web/mtg)* at the *Universitat Pompeu Fabra* in Barcelona, Spain, where I'm supervised by [Martín Rocamora](https://rocamora.uy) and co-supervised by [Laura Ibáñez-Martínez](https://scholar.google.com/citations?user=EczEU_cAAAAJ&hl=ca) and [Pablo Alonso-Jiménez](https://scholar.google.es/citations?user=6CUexcEAAAAJ&hl=es). Previously, I was at *[Simon Fraser University](http://www.sfu.ca/fas/computing.html)* where I double majored in Computer Science and Statistics.
+Currently, I'm doing my MSc in Sound and Music Computing in the *[Music Technology Group](https://www.upf.edu/web/mtg)* at the *Universitat Pompeu Fabra* in Barcelona, Spain, where I'm supervised by [Martín Rocamora](https://rocamora.uy) and co-supervised by [Laura Ibáñez-Martínez](https://scholar.google.com/citations?user=EczEU_cAAAAJ&hl=ca) and [Pablo Alonso-Jiménez](https://scholar.google.es/citations?user=6CUexcEAAAAJ&hl=es). Previously, I was at *[Simon Fraser University](http://www.sfu.ca/fas/computing.html)* where I double majored in Computer Science and Statistics.
 
 Before pivoting to Computer Science, I was a recipient of the Moe Koffman Memorial Music Scholarship at the *[University of Toronto](https://music.utoronto.ca)* where I studied Music with a focus in Jazz and Trombone.
 
