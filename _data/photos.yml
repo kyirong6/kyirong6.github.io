@@ -1,10 +1,11 @@
-# Photo sets are grouped by country. As new trips happen, add more entries
-# to an existing country rather than creating a new set.
+# Photo sets are grouped by country or theme. As new photos are added, use
+# an existing set where possible.
 #
 # Each photo has:
 #   file:    path relative to /assets/images/photos/
 #            (nested as <country>/<city-year>/<filename> so future trips to
 #            the same country can drop in without renumbering)
+#            or <theme>/<subject>/<filename> for themed sets
 #   caption: shown in the lightbox on click; free-form
 #            (city, area, site, landmark, whatever fits)
 
@@ -23,6 +24,12 @@
       caption: Castellers raising a tower in front of City Hall, Barcelona. 2026
     - file: spain/barcelona-2026/castellers_sant_jaume.jpeg
       caption: Castellers in Plaça de Sant Jaume, Barcelona. 2026
+    - file: spain/barcelona-2026/spanish_home_5_neighbours.jpeg
+      caption: Neighbouring apartment buildings, Barcelona. 2026
+    - file: spain/barcelona-2026/spanish_home_5_pool.jpeg
+      caption: A courtyard pool from above, Barcelona. 2026
+    - file: spain/barcelona-2026/spanish_home_5_pool_bw.jpeg
+      caption: A courtyard pool in black and white, Barcelona. 2026
 
 - title: France
   slug: france
@@ -69,3 +76,9 @@
       caption: A wind surfer on a beach, Geelong. 2018
     - file: australia/australia-2018/marine_sanctuary.jpeg
       caption: A beach, Geelong. 2018
+
+- title: Nature
+  slug: nature
+  photos:
+    - file: nature/birds/unknown_location_of_bird.jpeg
+      caption: A bird perched among the branches

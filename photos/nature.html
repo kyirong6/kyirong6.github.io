@@ -1,0 +1,17 @@
+---
+layout: page
+title: Nature
+permalink: /photos/nature/
+set: nature
+---
+
+{% assign set = site.data.photos | where: "slug", page.set | first %}
+<div class="photo-gallery">
+  <div class="photo-grid">
+    {% for photo in set.photos %}
+    <a href="/assets/images/photos/{{ photo.file }}" class="photo-item" data-caption="{{ photo.caption | xml_escape }}">
+      <img src="/assets/images/photos/thumbs/{{ photo.file }}" alt="{{ photo.caption | default: set.title | xml_escape }}" loading="lazy" decoding="async">
+    </a>
+    {% endfor %}
+  </div>
+</div>
