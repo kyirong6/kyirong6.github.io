@@ -27,9 +27,11 @@
     - file: spain/barcelona-2026/spanish_home_5_neighbours.jpeg
       caption: Neighbouring apartment buildings, Barcelona. 2026
     - file: spain/barcelona-2026/spanish_home_5_pool.jpeg
-      caption: A courtyard pool from above, Barcelona. 2026
+      caption: View of the pool from the apartment, Barcelona. 2026
     - file: spain/barcelona-2026/spanish_home_5_pool_bw.jpeg
-      caption: A courtyard pool in black and white, Barcelona. 2026
+      caption: View of the pool from the apartment in black and white, Barcelona. 2026
+    - file: spain/barcelona-2026/spanish_home_5_view.jpg
+      caption: View from the apartment, Barcelona. 2026
 
 - title: France
   slug: france
